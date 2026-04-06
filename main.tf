@@ -14,10 +14,10 @@ terraform {
 
   # Terraform Cloud backend
   cloud {
-    organization = var.tfc_organization
+    organization = "Myne_William"
 
     workspaces {
-      name = var.tfc_workspace
+      name = "Labs_Ansible"
     }
   }
 }
@@ -32,16 +32,16 @@ provider "aws" {
 
 data "aws_ami" "ubuntu" {
   most_recent = true
-  owners      = ["099720109477"] # Canonical
+  owners      = ["099720109477"]
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-22.04-amd64-server-*"]
+    values = ["ubuntu*22.04*amd64*server*"]
   }
 
   filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
+    name   = "state"
+    values = ["available"]
   }
 }
 

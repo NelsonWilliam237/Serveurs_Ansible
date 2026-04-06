@@ -2,18 +2,6 @@
 # variables.tf — All input variables
 # ============================================================
 
-# ---- Terraform Cloud ----
-variable "tfc_organization" {
-  description = "Terraform Cloud organization name"
-  type        = string
-}
-
-variable "tfc_workspace" {
-  description = "Terraform Cloud workspace name"
-  type        = string
-  default     = "ansible-lab"
-}
-
 # ---- AWS ----
 variable "aws_region" {
   description = "AWS region to deploy resources"

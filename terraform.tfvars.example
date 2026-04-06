@@ -6,10 +6,6 @@
 # web sous Settings > Variables (marque-les "Sensitive").
 # ============================================================
 
-# --- Terraform Cloud ---
-tfc_organization = "TON-ORG-TFC"      # ex: "williamdev"
-tfc_workspace    = "ansible-lab"
-
 # --- AWS ---
 aws_region = "us-east-1"
 
