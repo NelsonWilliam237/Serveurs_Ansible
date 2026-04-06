@@ -1,0 +1,23 @@
+# ============================================================
+# .gitignore — Ne JAMAIS versionner ces fichiers
+# ============================================================
+
+# Fichiers secrets locaux
+terraform.tfvars
+*.tfvars
+!terraform.tfvars.example
+
+# State files (géré par Terraform Cloud)
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Clés SSH
+*.pem
+williamkey
+williamkey.pub
+
+# Logs
+crash.log
+*.log

@@ -1,0 +1,47 @@
+# ============================================================
+# terraform.tfvars.example
+# Copie ce fichier en terraform.tfvars et remplis les valeurs.
+# NE JAMAIS committer terraform.tfvars dans Git !
+# Pour Terraform Cloud: ajoute ces variables dans l'interface
+# web sous Settings > Variables (marque-les "Sensitive").
+# ============================================================
+
+# --- Terraform Cloud ---
+tfc_organization = "TON-ORG-TFC"      # ex: "williamdev"
+tfc_workspace    = "ansible-lab"
+
+# --- AWS ---
+aws_region = "us-east-1"
+
+# --- Projet ---
+project_name = "ansible-lab"
+
+# --- Réseau ---
+vpc_cidr            = "10.0.0.0/16"
+public_subnet_cidr  = "10.0.1.0/24"
+private_subnet_cidr = "10.0.2.0/24"
+
+# ⚠️  Remplace 0.0.0.0/0 par ton IP publique pour sécuriser SSH
+# Trouve ton IP: curl ifconfig.me
+allowed_ssh_cidrs = ["0.0.0.0/0"]
+
+# --- SSH ---
+key_name = "williamkey"   # Nom exact de la Key Pair dans AWS
+
+# Contenu de ~/.ssh/williamkey.pub
+william_public_key = "ssh-rsa AAAA... william@monpc"
+
+# Contenu de ~/.ssh/williamkey (clé privée — SENSITIVE!)
+# Sur Terraform Cloud, passe cette variable en mode "Sensitive"
+william_private_key = <<EOT
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXk...
+-----END OPENSSH PRIVATE KEY-----
+EOT
+
+# --- User commun ---
+ansible_user = "admin12"
+
+# --- EC2 ---
+master_instance_type = "t3.medium"
+node_instance_type   = "t3.micro"
