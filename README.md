@@ -90,7 +90,7 @@ terraform apply   # déploie (~3-5 minutes)
 ```bash
 # L'IP publique est dans les outputs
 terraform output ssh_command_master
-# → ssh -i ~/.ssh/williamkey william@X.X.X.X
+# → ssh -i ~/.ssh/williamkey admin12@X.X.X.X
 ```
 
 ---
@@ -99,7 +99,7 @@ terraform output ssh_command_master
 
 ```bash
 # Connecte-toi au master
-ssh -i ~/.ssh/williamkey william@<MASTER_PUBLIC_IP>
+ssh -i ~/.ssh/williamkey admin12@<MASTER_PUBLIC_IP>
 
 # Teste la connectivité vers tous les nodes
 ansible all -m ping
