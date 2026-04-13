@@ -54,7 +54,7 @@ Internet
 
 ```bash
 git clone <ton-repo>
-cd ansible-lab-terraform
+cd serveurs-Ansible
 cp terraform.tfvars.example terraform.tfvars
 ```
 
