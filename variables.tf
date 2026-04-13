@@ -6,7 +6,7 @@
 variable "aws_region" {
   description = "AWS region to deploy resources"
   type        = string
-  default     = "us-east-1"
+  default     = "ca-central-1"
 }
 
 # ---- Project ----
@@ -81,7 +81,7 @@ variable "ansible_user" {
 variable "master_instance_type" {
   description = "Instance type for the master node"
   type        = string
-  default     = "t3.medium"
+  default     = "t3.micro"
 }
 
 variable "node_instance_type" {
